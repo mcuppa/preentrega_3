@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+{% load static %}
+{% block contenido %}
+    <section class="bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h2 class="mb-4">¡Bienvenido a Pigmenta!</h2>
+                    <p class="lead">Somos tu tienda de pinturas y accesorios favorita, ubicada en el corazón de la ciudad.
+                    En Pigmenta, nos apasiona ayudarte a encontrar los colores perfectos para tus proyectos de pintura,
+                    ya sea para renovar tu hogar o dar vida a tu próximo proyecto artístico.</p>
+                    <p>Con una amplia selección de pinturas de alta calidad, herramientas profesionales y el mejor
+                    asesoramiento de nuestro equipo experto, estamos aquí para hacer que tu experiencia de compra sea
+                    fácil y satisfactoria.</p>
+                    <p>¡Visítanos hoy y descubre cómo Pigmenta puede ayudarte a dar vida a tus ideas!</p>
+                </div>
+                <div class="col-lg-4">
+                    <img src="{% static 'appglobal/assets/local_pitureria.jpg' %}" class="img-fluid" alt="Imagen del local">
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

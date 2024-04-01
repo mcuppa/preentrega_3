@@ -1,0 +1,28 @@
+{% extends "main.html" %}
+
+{% load static %}
+
+{% block contenido %}
+   
+    <div class="container">
+        <h1 class="mb-4">Buscar Pinturas</h1>
+        <form class="mb-4" method="GET" action="{% url 'buscar_pinturas' %}">
+            <div class="input-group">
+                <input type="text" class="form-control" name="q" placeholder="Ingrese el nombre de la pintura...">
+                <button type="submit" class="btn btn-primary">Buscar</button>
+            </div>
+        </form>
+
+        {% if query %}
+        <h2 class="mb-3">Resultados para '{{ query }}':</h2>
+        <ul class="list-group">
+            {% for resultado in resultados %}
+            <li class="list-group-item">{{ resultado.name }} - {{ resultado.color }} - {{ resultado.litros }} litros</li>
+            {% empty %}
+            <li class="list-group-item">No se encontraron resultados.</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+
+{% endblock %}

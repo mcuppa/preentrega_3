@@ -1,0 +1,31 @@
+{% extends "main.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+    <div class="container mt-4">
+        <h1 class="mb-4">Listado de Clientes</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Dirección</th>
+                    <th>Condición</th>
+                    <th>Ubicación</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cliente in clientes %}
+                <tr>
+                    <td>{{ cliente.name }}</td>
+                    <td>{{ cliente.adress }}</td>
+                    <td>{{ cliente.get_condition_display }}</td> <!-- Utiliza get_FOO_display para campos con choices -->
+                    <td>{{ cliente.location }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{%endblock%}

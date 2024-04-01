@@ -1,0 +1,29 @@
+{% extends "main.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+    <div class="container mt-4">
+        <h1 class="mb-4">Listado de Pinturas</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Color</th>
+                    <th>Litros</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pintura in pinturas %}
+                <tr>
+                    <td>{{ pintura.name }}</td>
+                    <td>{{ pintura.color }}</td>
+                    <td>{{ pintura.litros }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{%endblock%}

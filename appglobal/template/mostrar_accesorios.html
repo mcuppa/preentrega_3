@@ -1,0 +1,33 @@
+{% extends "main.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+    <div class="container mt-4">
+        <h1 class="mb-4">Listado de Accesorios</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Descripcion</th>
+                    <th>Marca</th>
+                    <th>Tipo</th>
+                    <th>Material</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for accesorio in accesorios %}
+                <tr>
+                    <td>{{ accesorio.description }}</td>
+                    <td>{{ accesorio.brand }}</td>
+                   
+                    <td>{{ accesorio.type }}</td>
+
+                    <td>{{ accesorio.material }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{%endblock%}

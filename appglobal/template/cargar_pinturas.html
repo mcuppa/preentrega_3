@@ -1,0 +1,36 @@
+{% extends "main.html" %}
+
+{% load static %}
+
+{% block contenido %}
+    <!-- Section-->
+    <div class="container py-5 text-center">
+        <h1 class="display-2"><strong>Cargar pinturas</strong></h1>
+    </div>
+    <div class="container" style="margin-bottom: 5rem;">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form method="POST" action="{% url 'cargar_pintura' %}">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="color" class="form-label">Color</label>
+                        <input type="text" class="form-control" id="color" name="color" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="litros" class="form-label">Litros</label>
+                        <input type="number" class="form-control" id="litros" name="litros" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+  
+
+
+{% endblock %}
